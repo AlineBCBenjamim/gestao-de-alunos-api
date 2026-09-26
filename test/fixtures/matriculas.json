@@ -1,0 +1,40 @@
+[
+    {
+        "testTitle": "Validar que um aluna Aline Benjamim que acaba de ser cadastrado pode ser matriculado em uma nova disciplina",
+        "dadosAluno": {
+            "nome": "Aline Benjamim",
+            "email": "aline.benjamim.8765@example.com",
+            "matricula": "A126543526",
+            "senha": "123456"
+        },
+        "dadosDisciplina": {
+            "nome": "Pensamento Computacional",
+            "codigo": "PC03454",
+            "cargaHoraria": 60
+        },
+        "dadosTrabalho": {
+            "titulo": "Lista de Exercícios - Pensamento Computacional",
+            "descricao": "Resolução dos exercícios da unidade 1."
+        },
+        "statusCodeEsperado": 201
+    },
+    {
+        "testTitle": "Validar que um aluna Paula Jardim que acaba de ser cadastrado pode ser matriculado em uma nova disciplina",
+        "dadosAluno": {
+            "nome": "Paula Jardim",
+            "email": "paula.jardim.8765@example.com",
+            "matricula": "P126543526",
+            "senha": "123456"
+        },
+        "dadosDisciplina": {
+            "nome": "Pensamento Computacional",
+            "codigo": "PC03455",
+            "cargaHoraria": 60
+        },
+        "dadosTrabalho": {
+            "titulo": "Lista de Exercícios - Pensamento Computacional",
+            "descricao": "Resolução dos exercícios da unidade 1."
+        },
+        "statusCodeEsperado": 201
+    }
+]

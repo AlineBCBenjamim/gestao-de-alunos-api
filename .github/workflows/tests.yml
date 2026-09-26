@@ -32,9 +32,30 @@ jobs:
           cache: npm
 
       - name: Instalar dependências
-        run: npm ci
+        run: npm install
+
+      - name: Subir a API em modo produção
+        run: npm start &
+        env:
+          MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
+          JWT_SECRET: segredo-ci
+          ADMIN_EMAIL: admin@escola.com
+          ADMIN_SENHA: admin123
+          BASE_URL: http://localhost:3000
+
+      - name: Aguardar a API responder
+        run: |
+          for i in $(seq 1 30); do
+            curl -s -o /dev/null http://localhost:3000/ && echo "API no ar" && exit 0
+            sleep 1
+          done
+          echo "API não respondeu a tempo" && exit 1
 
       - name: Executar testes
         run: npm test
         env:
           MONGODB_URI: mongodb://127.0.0.1:27017/gestao-de-alunos-test
+          JWT_SECRET: segredo-ci
+          ADMIN_EMAIL: admin@escola.com
+          ADMIN_SENHA: admin123
+          BASE_URL: http://localhost:3000
