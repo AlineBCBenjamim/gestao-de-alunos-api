@@ -73,7 +73,8 @@ src/
     ApiError.js
     asyncHandler.js
 docs/
-  openapi.yaml            # especificação Swagger/OpenAPI (fonte da documentação)
+    openapi.yaml            # especificação Swagger/OpenAPI (fonte da documentação)
+.env.example                # exemplo das informações de configuração do projeto
 ```
 
 ## Instalação e execução
